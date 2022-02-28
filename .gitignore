@@ -104,7 +104,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+envs/
 venv/
 ENV/
 env.bak/
@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# other files
+_
+_custom_tensor_weights_from_yolo/coco/
+static/videos/old_lady_train.mp4
