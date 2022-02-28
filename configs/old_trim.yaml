@@ -1,0 +1,50 @@
+model:
+  weights_folder : coco_tiny
+
+paths:
+  yolo_weights_path : r"./_custom_yolo_weights"
+  image_folder : r".static/images"
+  video_folder : r".static/videos"
+  video_1 : 1.jpeg
+  video_name : old_lady_train_Trim.mp4
+  video_3 : 2.jpeg
+  video_4 : 1.jpeg
+  video_5 : 2.jpeg
+  video_6 : 1.jpeg
+
+
+
+params:
+  threshold : 0.2
+
+polygon:
+  x1 : 288
+  y1 : 566
+  x2 : 288
+  y2 : 395
+  x3 : 1900
+  y3 : 545
+  x4 : 1900
+  y4 : 1068
+
+color:
+  polygon : [15,220,10]
+  rect_in : [0, 0, 255]  # when inside poly
+  centroid_in : [255, 0, 0] # when inside poly
+  text_in : [0, 0, 0] # when inside poly
+  rect : [255, 0, 0]
+  centroid: [0, 0, 255]
+  text : [0, 0, 0]
+
+thickness:
+  polygon : 6
+  rect_in : 2  # when inside poly
+  centroid_in : -1 # when inside poly
+  text_in : 1 # when inside poly
+  rect : 2
+  centroid : -1
+  text : 1
+
+
+
+
