@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RTD-Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1 style="font-size: 500%">Railway Tresspassing Detection <br>System</h1>
+		<p>An AI Based Railway Tresspassing detection system at your doorstep.<br> In an attempt to save countless lives.</p>
+		<span>
+		    <p>Project From Team :
+		    <b style="background-color: black;"><span style="color: rgb(139, 0, 182);"> HA</span>  <span style="color: rgb(243, 101, 45);">KA</span> <span style="color: rgb(0, 202, 185);">YO</span></b></p>
+		</span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Login to your one stop solution and help save lives. It takes less than a minute</p>
+		<div class="inputs">
+			<form action="{{url_for('multi_screen')}}" method="post">
+				<input type="text" name="username" id="username" placeholder="Username" required >
+			    <br>
+			    <input type="text" name="password" id="password" placeholder="Password" required>
+				<input type="submit" value="Login">
+		    </form>
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">	
+			<p>forgot password?</p>
+		</div>
+	    </div>
+	
+</div>
+</body>
+</html>
+
+
+<!-- 
+
+CREATE DATABASE railways_userdb;
+
+USE railways_userdb;
+
+CREATE TABLE user (
+    user int(20),
+    username varchar(255),
+    password varchar(255),
+    email_id varchar(255),
+    firstname varchar(255),
+    lastname varchar(255)
+);
+
+INSERT INTO user VALUES(1, "Karthik", "karthik123", "karthik@gmail.com", "Karthik", "Arumugam");
+INSERT INTO user VALUES(2, "Yogesh", "yogesh123", "yogesh@gmail.com", "Yogesh", "Rajgure");
+INSERT INTO user VALUES(3, "Harsh", "harsh123", "harsh@gmail.com", "Harsh", "Ingle");
+
+-->
