@@ -131,4 +131,5 @@ dmypy.json
 # other files
 _
 _custom_tensor_weights_from_yolo/coco/
+static/videos/old_lady_train_Trim.mp4
 static/videos/old_lady_train.mp4
