@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # other files
-_
+clg_related_files
 _custom_tensor_weights_from_yolo/coco/
 static/videos/old_lady_train_Trim.mp4
 static/videos/old_lady_train.mp4
