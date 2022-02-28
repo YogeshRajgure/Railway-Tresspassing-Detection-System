@@ -1,0 +1,64 @@
+@charset "utf-8";
+@import "reset.css";
+
+.hand{cursor: pointer;}
+.none{display: none;}
+.g-line-row{background: #e7e7e7; width: 100%; height: 1px;}
+.g-underline-text{position: relative;background: #cbcbcb;}
+.text-idt25{text-indent: 25px;}
+.resize-none{resize: none;}
+.bg-gray{background: #e7e7e7;}
+
+.ML10{margin-left: 10px;}
+.ML15{margin-left: 15px;}
+.ML20{margin-left: 20px;}
+.ML25{margin-left: 25px;}
+.MR5{margin-right: 5px;}
+.MR10{margin-right: 10px;}
+.MR15{margin-right: 15px;}
+.MR20{margin-right: 20px;}
+.MR30{margin-right: 30px;}
+.MT5{margin-top: 5px;}
+.MT10{margin-top: 10px;}
+.MT15{margin-top: 15px;}
+.MT20{margin-top: 20px;}
+.MT30{margin-top: 30px;}
+.MB10{margin-bottom: 10px;}
+.MB15{margin-bottom: 15px;}
+.MB30{margin-bottom: 30px;}
+
+.P30{padding: 30px;}
+.PL30{padding-left: 30px;}
+
+.font-bold{font-weight: bold;}
+.font-middle{font-weight: 500;}
+.g-font{font-size: .875em;color: #363b3c;}
+.g-font-s12{font-size: 12px;}
+.g-font-s16{font-size: 16px;}
+.g-font-color.green{color: #56b282;}
+.g-font-color.white{color: #e6e6e6;}
+.g-font-color.red{color: #f12828;}
+.g-font-color.orange{color: #f39800;}
+.g-font-color.gray{color: #bbb;}
+.g-font-color.black{color: #343544;}
+
+.progress{display: inline-block;width: 100%;height: 18px;overflow: hidden;background-color: #525366;border-radius: 20px;}
+.progress-bar{display: inline-block;width: 0;height: 100%;font-size: 12px;line-height: 18px;color: #fff;text-align: center;background-color: #407e5f;vertical-align: top;}
+.progress.gray{background: #e7e7e7;}
+.progress.block{display: block;}
+.progress-bar.red{background: #e95252;}
+.progress-bar.orange{background: #f39800;}
+
+.g-btn{font-size:28px;padding: 5px 10px;cursor:pointer;display:inline-block;vertical-align: middle;border-radius:20px;border:none;outline:none;}
+.g-btn-default{color:#fff;background:#56b282;}
+.g-btn-default:hover,.g-btn-default:focus{color: #fff;background: #439269;}
+.g-btn-sm{padding:2px 15px 2px;font-size: 14px;line-height: 1.5;border-radius:25px;}
+.g-btn.transparent{background:transparent;color: #56b282;border: 1px solid #56b282;}
+.g-btn.transparent:hover,.g-btn.transparent:focus{border: 1px solid #56b282;background:#56b282;color:#fff;}
+
+.g-arrow{position: relative;}
+.g-arrow-i {width: 0;height: 0;position: absolute;overflow: hidden;border-width: 5px;font-size:0;line-height: 0; margin: 0;}
+.g-arrow-iup{border-style: dashed dashed solid; border-color:transparent transparent #b8b8b8;  }
+.g-arrow-idown{border-style: solid dashed dashed; border-color: #b8b8b8 transparent transparent;bottom: -10px; }
+.g-arrow-il {border-style: dashed solid dashed dashed; border-color:transparent #b8b8b8 transparent transparent;}
+.g-arrow-ir {border-style: dashed dashed dashed solid; border-color:transparent transparent transparent #b8b8b8;}

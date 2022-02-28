@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperPass.Net</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="detail-right"></div>
+<div class="sentence-detail none"></div>
+<script id="illustrate-template" type="text/html">
+    <div class="paper-section" style="margin-bottom: 180px;">
+        <h4 data-lang="DifferentSimilarityTip"></h4>
+        <ul class="notice-list-group">
+            <li class="notice-red">
+                <span class="g-font-color red MR10" data-lang="Red"></span><span data-lang="SevereSimilarity"></span>
+            </li>
+            <li class="notice-orange">
+                <span class="g-font-color orange MR10" data-lang="Orange"></span><span data-lang="SlightlySimilar"></span>
+            </li>
+            {{ if isVersion }}
+            <li class="notice-black">
+                <span class="g-font-color black MR10" data-lang="Black"></span><span data-lang="Qualified"></span>
+            </li>
+            {{ else }}
+            <li class="notice-green">
+                <span class="g-font-color green MR10" data-lang="Green"></span><span data-lang="Qualified"></span>
+            </li>
+            {{ /if }}
+        </ul>
+        <div class="MT15" data-lang="ViewDetailSentence"></div>
+    </div>
+</script>
+<script id="similar-template" type="text/html">
+    <span id="gototop"></span>
+    <div class="paper-txt">
+        <div class="font-bold g-font-s16 flex-between">
+            <div><span data-lang="SentenceSimilarityTip"></span> : <span class="g-font-color {{ $imports.scoreColor(score) }} similarNum">{{ score }}%</span></div>
+            <div class="close-template"></div>
+        </div>
+        <div class="MT30">
+            <div class="font-bold">
+                <span data-lang="YourSentence" class="g-font-s16"></span>:
+            </div>
+            <div class="MT5">{{ content }}</div>
+        </div>
+    </div>
+
+    <div class="tab-A">
+        <ul class="tab-A-ul clearfix" tab-a="ul">
+            <li data-id="学术期刊,学位论文,学术会议,书籍数据,互联网,自建库,foreignOthers,all" class="active">
+                <span class="icon iconfont icon-composite"></span>
+                <span class="tab-text" data-lang="AllResources"></span>
+                <span class="tab-superscript font10px">{{ total }}</span>
+            </li>
+            <li data-id="tab,学术期刊,学位论文,学术会议,书籍数据,自建库,foreignOthers,local">
+                <span class="icon iconfont icon-xueshu"></span>
+                <span class="tab-text" data-lang="AcademicResources"></span>
+                <span class="tab-superscript font10px">{{ local }}</span>
+            </li>
+            <li data-id="互联网,5">
+                <span class="icon iconfont icon-internet"></span>
+                <span class="tab-text" data-lang="InternetResources"></span>
+                <span class="tab-superscript font10px">{{ net }}</span>
+            </li>
+        </ul>
+    </div>
+
+    {{ each data value key }}
+    <div class="tab-content" tab="section" data-id="{{ value.articleType }}">
+        <div class="paper-txt P30">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <span class="chapter-symbol"></span>
+                    <span class="chapter-num">{{ key + 1 }}</span>
+                </div>
+                <div class="pull-right font-bold">
+                    <span data-lang="Similarity"></span> : <span class="g-font-color {{ $imports.scoreColor(value.score) }} similarNum">{{ value.score }}%</span>
+                </div>
+            </div>
+            <div class="MT5">
+                <p class="font-bold">
+                    <span data-lang="YourSentence"></span> :
+                </p>
+                <p class="g-font-color {{ $imports.scoreColor(value.score) }}"><%- $imports.wordsColor(value.originalSegGreyList, content, '<span class="g-underline-text">{%s}</span>') %></p>
+            </div>
+            <div class="MT10">
+                <p class="font-bold">
+                    <span data-lang="SimilarSentences"></span> :
+                </p>
+                <p class="g-font-color green"><%- $imports.wordsColor(value.similaritySegGreyList, value.similaritySentence, '<span class="g-underline-text">{%s}</span>') %></p>
+            </div>
+            <div class="MT10">
+                <p class="font-bold">
+                    <span data-lang="SimilarOriginalFragment"></span> :
+                </p>
+                <p>...<%- $imports.subSimilaritySection(value.subSimilaritySentenceSection, value.similaritySentence) %>...</p>
+            </div>
+            <div class="MT10">
+                <p class="font-bold">
+                    <span data-lang="Source"></span>(<%- value.source %>) :
+                </p>
+                <div class="local-source-detail">
+                    {{ if value.articleType == "互联网"}}
+                    <span data-lang="Title"></span> : <a href="{{ value.chuChu }}" target="_blank" class="g-font-color black">{{ value.title }}</a><a href="{{ value.chuChu }}" target="_blank" class="g-font-color black" style="vertical-align: middle;"><span class="icon iconfont icon-tiaozhuan"></span></a>
+                    {{ else }}
+                    <%- value.simpleDetailJson %>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+        <div class="g-line-row"></div>
+    </div>
+    {{ /each }}
+
+    <div class="back-to-top text-center P30">
+        <a href="#gototop" class="g-font-color green" data-lang="BackTop"></a>
+    </div>
+</script>
+<div class="paper-footer" style="font-size: 14px;margin-top: 0;">
+    <a href="https://www.paperpass.net/" target="_blank" class="logo_right"></a>
+    <div data-lang="PaperFooter"></div>
+    <div class="MT10"><span data-lang="Copyright"></span> © <span class="getFullYear"></span> <a href="https://www.paperpass.net/" target="_blank">PaperPass.Net</a></div>
+</div>
+<span style="display: none;">This__is__the__place__to__load__the__download__file__code.__The__offline__version__is__hidden,__but__the__online__version__will__have__it.</span>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/language.js"></script>
+<script src="js/detaildata.js"></script>
+<script src="js/Lib.js"></script>
+<script src="js/template-web.js"></script>
+<script src="js/simpleSimSource.js"></script>
+<script src="js/ReportParser.js"></script>
+<script>
+    Report.report_id = '61cddc11cc50c6e7c';
+</script>
+<script>
+    (function(System,$){
+        System.operateState.saveId(Report.report_id);
+        var tel = template('illustrate-template', {"isVersion": typeof is_has_text_html == "undefined" ? true : is_has_text_html});
+        $("#detail-right").html(tel);
+        var sentence = new Map();
+        var leng = System.operateState.getLanguage(Report.report_id);
+        if (leng != '') {
+            leng = typeof multilingual[leng] == "undefined" ? "English" : leng;
+        } else {
+            leng = typeof multilingual[user_language] == "undefined" ? "English" : user_language;;
+        }
+        SwitchMultilingual(leng);
+        function SwitchMultilingual(leng) {
+            $('*[data-lang]').each(function () {
+                var name = $(this).data().lang;
+                $(this).html(multilingual[leng][name]);
+            });
+        }
+        var loadingTip = `<div class="layui_loading_shade right_small_shade"><div class="layui-layer main_layer"><div class="layui-layer-content">${multilingual[leng].Loading}</div></div></div>`;
+        window.addEventListener("message", function (event) {
+            if (event.data.sentenceId || event.data.sentenceId == 0) {
+                var sentenceId = event.data.sentenceId;
+                var floor = Math.floor(sentenceId / 200);
+                var sentenceData = sentence.get('simpleSentenceResult_'+ floor);
+                if (typeof sentenceData == 'undefined') {
+                    $("body").append(loadingTip);
+                    var script = document.createElement('script');
+                    script.src = 'js/simpleSentenceResult_'+ floor +'.js';
+                    script.id = 'simpleSentenceResult_'+ floor;
+                    document.body.appendChild(script);
+                    if (script.addEventListener) {
+                        script.addEventListener('load', function() {
+                            sentence.set('simpleSentenceResult_'+ floor, data);
+                            sentenceData = data;
+                            sentenceContent(sentenceData, sentenceId);
+                            SwitchMultilingual(leng);
+                            document.body.removeChild(script);
+                            document.body.removeChild($(".right_small_shade")[0]);
+                        }, false);
+                    } else if (script.attachEvent) {
+                        script.addEventListener('onreadystatechange', function() {
+                            var target = window.event.srcElement;
+                            if (target.readyState == 'loaded') {
+                                sentence.set('simpleSentenceResult_'+ floor, data);
+                                sentenceData = data;
+                                sentenceContent(sentenceData, sentenceId);
+                                SwitchMultilingual(leng);
+                                document.body.removeChild(script);
+                                document.body.removeChild($(".right_small_shade")[0]);
+                            }
+                        }, false);
+                    }
+                } else {
+                    sentenceContent(sentenceData, sentenceId);
+                    SwitchMultilingual(leng);
+                }
+            }
+            if (event.data.leng) {
+                leng = event.data.leng;
+                SwitchMultilingual(leng);
+                System.operateState.saveLanguage(Report.report_id, leng);
+            }
+        }, false);
+        $(document).delegate(".close-template","click",function() {
+            $("#detail-right").show();
+            $(".logo_right").show();
+            $(".sentence-detail").hide();
+            parent.postMessage("clearSentenceId", "*")
+        });
+
+        var tab = System.Paper.tab();
+        var $advice = null;
+        function run(){
+            var i = 0;
+            tab.call(this,{callback:function(){
+                    var $num = $(this).find('.chapter-num');
+                    if($num.length>0){
+                        i++;
+                        $num.text(i);
+                    }
+                }});
+        }
+        $(function(){
+            var date = new Date();
+            $(".getFullYear").html(date.getFullYear());
+            $(document).on('click','[tab-a="ul"] li',function(){
+                run.call(this);
+            });
+        });
+    })(Report,jQuery);
+</script>
+</html>
