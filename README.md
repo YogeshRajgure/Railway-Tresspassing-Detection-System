@@ -2,7 +2,7 @@
 
 Project Members: \
 [Harsh Ingle](https://github.com/HarIn-Inc) \
-[Karthik Arumugam](https://github.com/KarthikArumugam3) \ 
+[Karthik Arumugam](https://github.com/KarthikArumugam3) \
 [Yogesh Rajgure](https://github.com/YogeshRajgure)
 
 
