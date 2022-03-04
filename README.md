@@ -6,9 +6,6 @@ Project Members: \
 [Yogesh Rajgure](https://github.com/YogeshRajgure)
 
 
-Made with [contributors-img](https://contrib.rocks).
-
-
 ### Ongoing Project
 ![sneak ](static/videos/tresspassing_detection_v1.gif)
 
