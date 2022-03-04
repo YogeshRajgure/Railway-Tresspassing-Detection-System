@@ -1,5 +1,13 @@
 # Railway-Tresspassing-Detection-System
 
+Project Members: \
+[Harsh Ingle](https://github.com/HarIn-Inc) \
+[Karthik Arumugam](https://github.com/KarthikArumugam3) \ 
+[Yogesh Rajgure](https://github.com/YogeshRajgure)
+
+
+Made with [contributors-img](https://contrib.rocks).
+
 
 ### Ongoing Project
 ![sneak ](static/videos/tresspassing_detection_v1.gif)
