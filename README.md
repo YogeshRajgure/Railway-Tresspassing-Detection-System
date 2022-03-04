@@ -2,7 +2,13 @@
 
 
 ### Ongoing Project
-![](static/videos/tresspassing_detection_v1.gif)
+![sneak ](static/videos/tresspassing_detection_v1.gif)
+
+Person detected on railway tracks \
+![](static/images/1_.jpg)
+
+Person detected outside reailway tracks \
+![](static/images/2_.jpg)
 
 for now, this code works only on the given video files for \
 maintain the folder hierarchy..
