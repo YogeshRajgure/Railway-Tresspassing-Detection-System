@@ -134,3 +134,5 @@ _custom_tensor_weights_from_yolo/coco/
 static/videos/old_lady_train_Trim.mp4
 static/videos/old_lady_train.mp4
 static/videos/tresspassing_detection_v1.mp4
+static/videos/empty_crossing.mp4
+static/videos/walking_on_sides.mp4
