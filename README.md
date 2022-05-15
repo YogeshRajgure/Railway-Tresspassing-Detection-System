@@ -7,7 +7,7 @@ Project Members: \
 
 
 ### Ongoing Project
-![sneak ](static/videos/tresspassing_detection_v1.gif)
+![sneak ](static/gif/tresspassing_detection_v1.gif)
 
 Person detected on railway tracks \
 ![](static/images/1_.jpg)
@@ -20,3 +20,5 @@ maintain the folder hierarchy..
 https://drive.google.com/drive/u/6/folders/1zHGJ5R5G6_RKXFDj_rUsj1xV-kFmvYXm
 
 now exploring flask+celery and flask socketIO to be able to send the live data to flask.
+
+# app_class_demo.py is working for now
