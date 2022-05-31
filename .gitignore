@@ -132,3 +132,4 @@ clg_related_files
 _custom_tensor_weights_from_yolo/coco/
 # videos folder
 static/videos/
+Sem_8_clg_work/

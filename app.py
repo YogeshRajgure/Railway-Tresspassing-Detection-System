@@ -7,13 +7,14 @@ import winsound
 import numpy as np
 import yaml
 from yaml.loader import SafeLoader
+# import time
 
 
 app = Flask(__name__)
 app.secret_key = "super secret keys"
 
 
-threshold = 0.6
+threshold = 0.4
 dict_names = {
             0:"person",
             6:"train",
@@ -69,17 +70,27 @@ class Window:
         area_of_interest = self.area_of_interest
         new_area_of_interest = self.new_area_of_interest
         count = 0
+        prev_frame_time = 0
+        # used to record the time at which we processed current frame
+        new_frame_time = 0
 
         while True:
             count += 1
-            if count % 7 != 0:  # skip frames condition
+            if count % 3 != 0:  # skip frames condition
                 continue
 
             ## read the camera frame
             ret, frame = cap.read()
             if not ret:
                 break
-
+            #----------------------------------------------
+            # new_frame_time = time.time()
+            # fps = 1 / (new_frame_time - prev_frame_time)
+            # prev_frame_time = new_frame_time
+            # # converting the fps into integer
+            # fps = int(fps)
+            # print(fps)
+            # ----------------------------------------------
             # draw the boundaries for railway route
             cv2.polylines(frame, np.array(area_of_interest, np.int32), True, (15, 220, 10), 6)
             # drop the unwanted part of the frame
