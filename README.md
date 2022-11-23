@@ -7,7 +7,7 @@ Project Members: \
 
 
 ### Ongoing Project
-![sneak ](static/gif/tresspassing_detection_v1.gif)
+![sneak ](static/gif/DART.gif)
 
 Person detected on railway tracks \
 ![](static/images/1_.jpg)
