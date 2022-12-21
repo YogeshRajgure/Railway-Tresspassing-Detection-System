@@ -145,6 +145,9 @@ class Window:
                                         lineType=cv2.LINE_AA)
                             # ALERT THE TRESSPASSING WITH SOUND
                             winsound.Beep(500, 100)
+                            # winsound.PlaySound(winsound.Beep(500, 100), winsound.SND_ASYNC)
+                            # winsound.PlaySound(r"static/sounds/alert.wav", winsound.SND_ASYNC)
+                            # print("play sound")
                             # winsound.PlaySound('alert.wav', winsound.SND_ASYNC)
 
                         else:  # draw the box in green color
